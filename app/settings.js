@@ -78,7 +78,7 @@ module.exports = {
     // ------------------------------------------------------------
     // $ node node_modules/node-red-admin/node-red-admin.js hash-pw
     // ------------------------------------------------------------
-    // The following sample has correponds to password 'alestis'
+    // The following sample has correponds to password 'raspberry'
     adminAuth: {
         type: "credentials",
         users: [{
