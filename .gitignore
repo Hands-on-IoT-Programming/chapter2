@@ -1,3 +1,7 @@
+# NodeRED scpecifics
+data
+*.backup
+
 # Logs
 logs
 *.log
