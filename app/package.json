@@ -1,6 +1,6 @@
 {
-  "name": "hands-on-red-iot",
-  "description": "Node-RED instance for deploying Projects",
+  "name": "hands-on-red-iot-ch3",
+  "description": "Basic Node-RED instance",
   "version": "1.0.0",
   "private": true,
   "main": "node_modules/node-red/red/red.js",
