@@ -1,2 +1,2 @@
-# chapter3
-Code samples for Chapter 3 Data Acquisition with NodeRED
+# chapter2
+Code samples for Chapter 2 Data Acquisition with NodeRED
