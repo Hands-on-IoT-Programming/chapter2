@@ -79,6 +79,7 @@ module.exports = {
     // $ node node_modules/node-red-admin/node-red-admin.js hash-pw
     // ------------------------------------------------------------
     // The following sample has correponds to password 'raspberry'
+    /*
     adminAuth: {
         type: "credentials",
         users: [{
@@ -91,6 +92,7 @@ module.exports = {
             permissions: "read"
         }
     },
+    */
 
     // To password protect the node-defined HTTP endpoints (httpNodeRoot), or
     // the static content (httpStatic), the following properties can be used.
