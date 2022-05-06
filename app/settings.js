@@ -23,7 +23,7 @@ module.exports = {
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
-    //flowFilePretty: true,
+    flowFilePretty: true,
 
     // By default, credentials are encrypted in storage using a generated key. To
     // specify your own secret, set the following property.
@@ -79,6 +79,7 @@ module.exports = {
     // $ node node_modules/node-red-admin/node-red-admin.js hash-pw
     // ------------------------------------------------------------
     // The following sample has correponds to password 'raspberry'
+    /*
     adminAuth: {
         type: "credentials",
         users: [{
@@ -91,6 +92,7 @@ module.exports = {
             permissions: "read"
         }
     },
+    */
 
     // To password protect the node-defined HTTP endpoints (httpNodeRoot), or
     // the static content (httpStatic), the following properties can be used.
@@ -198,7 +200,7 @@ module.exports = {
             redirect: "http://therobotacademy.com"
         },*/
         projects: {
-            enabled: true // Enable the projects feature https://nodered.org/docs/user-guide/projects/
+            enabled: false // Enable the projects feature https://nodered.org/docs/user-guide/projects/
         } 
     },
     // Configure the logging output
