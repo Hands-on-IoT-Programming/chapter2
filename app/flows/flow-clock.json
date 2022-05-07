@@ -2,17 +2,16 @@
     {
         "id": "de5f2b14.ab3bc",
         "type": "tab",
-        "label": "Clock",
+        "label": "Local time",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "88c78cd7.1e2bb",
-        "type": "ui_tab",
-        "z": "",
-        "name": "Device Stats",
-        "icon": "dashboard",
-        "order": 2
+        "id": "6aaa81ea.7c8f18",
+        "type": "tab",
+        "label": "World times",
+        "disabled": false,
+        "info": ""
     },
     {
         "id": "fee98c91.8a287",
@@ -124,7 +123,7 @@
         "id": "f39b162c.9e3148",
         "type": "ui_group",
         "z": "",
-        "name": "clock",
+        "name": "Local time",
         "tab": "6e28a403.732adc",
         "order": 1,
         "disp": true,
@@ -136,6 +135,46 @@
         "type": "ui_spacer",
         "name": "spacer",
         "group": "f39b162c.9e3148",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d9384beb.5a479",
+        "type": "ui_group",
+        "z": "",
+        "name": "Berlin",
+        "tab": "6e28a403.732adc",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2453857c.e1c2d2",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "d9384beb.5a479",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a17a87f8.bc954",
+        "type": "ui_group",
+        "z": "",
+        "name": "New York",
+        "tab": "6e28a403.732adc",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "39331574.44bb72",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "a17a87f8.bc954",
         "order": 2,
         "width": 1,
         "height": 1
@@ -340,11 +379,246 @@
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "Time",
+        "label": "<font size=4>Time",
         "format": "<font size=6>{{msg.payload}}",
         "layout": "col-center",
+        "x": 750,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "5005ff15.d1d87",
+        "type": "debug",
+        "z": "6aaa81ea.7c8f18",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 430,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "df034803.9d4de",
+        "type": "moment",
+        "z": "6aaa81ea.7c8f18",
+        "name": "-> Berlin date",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "ddd Do MMM YYYY",
+        "locale": "en-US",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Europe/Berlin",
+        "x": 460,
+        "y": 140,
+        "wires": [
+            [
+                "aef71950.492778"
+            ]
+        ]
+    },
+    {
+        "id": "4a32843.1ad70fc",
+        "type": "debug",
+        "z": "6aaa81ea.7c8f18",
+        "name": "Berlin",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 710,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "262c6002.4667",
+        "type": "inject",
+        "z": "6aaa81ea.7c8f18",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "",
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "5005ff15.d1d87",
+                "df034803.9d4de",
+                "cb1481df.9cf118",
+                "31dd07b6.11c698",
+                "5dc753.3427a8ac"
+            ]
+        ]
+    },
+    {
+        "id": "aef71950.492778",
+        "type": "ui_text",
+        "z": "6aaa81ea.7c8f18",
+        "group": "d9384beb.5a479",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Berlin date",
+        "format": "<font size=6>{{msg.payload}}",
+        "layout": "col-center",
+        "x": 730,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "1be7f950.2a8817",
+        "type": "ui_text",
+        "z": "6aaa81ea.7c8f18",
+        "group": "d9384beb.5a479",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "<font size=4>Berlin time",
+        "format": "<font size=6>{{msg.payload}}",
+        "layout": "col-center",
+        "x": 770,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "cb1481df.9cf118",
+        "type": "moment",
+        "z": "6aaa81ea.7c8f18",
+        "name": "-> Berlin time",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm",
+        "locale": "en-US",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "Europe/Berlin",
+        "x": 450,
+        "y": 180,
+        "wires": [
+            [
+                "1be7f950.2a8817",
+                "4a32843.1ad70fc"
+            ]
+        ]
+    },
+    {
+        "id": "31dd07b6.11c698",
+        "type": "moment",
+        "z": "6aaa81ea.7c8f18",
+        "name": "-> New York date",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Europe/Berlin",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "ddd Do MMM YYYY",
+        "locale": "C",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "America/New_York",
+        "x": 470,
+        "y": 300,
+        "wires": [
+            [
+                "afc2bfdb.b9b978"
+            ]
+        ]
+    },
+    {
+        "id": "432b7050.a27738",
+        "type": "debug",
+        "z": "6aaa81ea.7c8f18",
+        "name": "NY",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
         "x": 710,
         "y": 380,
         "wires": []
+    },
+    {
+        "id": "afc2bfdb.b9b978",
+        "type": "ui_text",
+        "z": "6aaa81ea.7c8f18",
+        "group": "a17a87f8.bc954",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "NY date",
+        "format": "<font size=6>{{msg.payload}}",
+        "layout": "col-center",
+        "x": 720,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "85b59164.443ee",
+        "type": "ui_text",
+        "z": "6aaa81ea.7c8f18",
+        "group": "a17a87f8.bc954",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "<font size=4>NY time",
+        "format": "<font size=6>{{msg.payload}}",
+        "layout": "col-center",
+        "x": 760,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5dc753.3427a8ac",
+        "type": "moment",
+        "z": "6aaa81ea.7c8f18",
+        "name": "-> New York time",
+        "topic": "",
+        "input": "",
+        "inputType": "msg",
+        "inTz": "Europe/Madrid",
+        "adjAmount": 0,
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "HH:mm",
+        "locale": "C",
+        "output": "",
+        "outputType": "msg",
+        "outTz": "America/New_York",
+        "x": 470,
+        "y": 340,
+        "wires": [
+            [
+                "85b59164.443ee",
+                "432b7050.a27738"
+            ]
+        ]
     }
 ]
